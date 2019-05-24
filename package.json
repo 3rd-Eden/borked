@@ -1,0 +1,34 @@
+{
+  "name": "borked",
+  "version": "1.0.0",
+  "description": "Timeout async functions when they are borked",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/3rd-Eden/borked.git"
+  },
+  "keywords": [
+    "borked",
+    "broken",
+    "promise",
+    "timeout",
+    "async",
+    "function",
+    "time",
+    "out"
+  ],
+  "author": "Arnout Kazemier",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/3rd-Eden/borked/issues"
+  },
+  "homepage": "https://github.com/3rd-Eden/borked#readme",
+  "devDependencies": {
+    "assume": "^2.2.0",
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1"
+  }
+}
