@@ -16,14 +16,19 @@ function bork(time, failure) {
    * @public
    */
   return function borked(pinky, timeout) {
+    let timer;
+
     return Promise.race([
       pinky,
       new Promise(function delay(resolve, reject) {
         const err = new Error('Failed to resolve promise in a timely manner');
 
-        setTimeout(reject.bind(reject, failure || err), time || timeout);
+        timer = setTimeout(reject.bind(reject, failure || err), time || timeout);
       })
-    ]);
+    ]).then(function cleanup(value) {
+      clearTimeout(timer);
+      return value;
+    });
   }
 }
 

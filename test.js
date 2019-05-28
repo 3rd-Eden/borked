@@ -17,7 +17,7 @@ describe('borked', function () {
   async function toolong() {
     await wait(3000);
 
-    return 'foo';
+    return 'i took too long';
   }
 
   describe('bork', function () {
@@ -57,6 +57,12 @@ describe('borked', function () {
 
       next();
     });
+
+    it('cleans up the internal timer', async function () {
+      const timeout = bork(200000);
+
+      await timeout(instant());
+    });
   });
 
   describe('borked', function () {
@@ -65,8 +71,10 @@ describe('borked', function () {
     });
 
     it('allows a custom timeout', async function () {
-      const val = await timeout(instant());
       const next = assume.plan(3);
+
+      const timeout = bork(20);
+      const val = await timeout(instant());
 
       assume(val).equals('foo');
 
