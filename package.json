@@ -1,6 +1,6 @@
 {
   "name": "borked",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Timeout async functions when they are borked",
   "main": "index.js",
   "scripts": {
