@@ -54,4 +54,4 @@ catch (e) {
 
 ## License
 
-[MI](LICENSE)
+[MIT](LICENSE)
